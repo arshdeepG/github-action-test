@@ -12,13 +12,11 @@ jobs:
         uses: metcalfc/changelog-generator@v3.0.0
         with:
           myToken: ${{ secrets.GITHUB_TOKEN }}
-          
       - name: Hello world action step
         uses: arshdeepG/github-action@v1.0
         with:
           who-to-greet: 'Arshdeep'
-          commits: ${{ steps.changelog.outputs.changelog }}
-          
+          commits: ${{ steps.changelog.outputs.changelog }}   
       - name: Create Release
         id: create_release
         uses: actions/create-release@latest
